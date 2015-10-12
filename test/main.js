@@ -4,7 +4,7 @@ var mocha = require('mocha');
 var should = chai.should();
 
 describe('Iframe', function() {
-  var testurl = '%%[iframe src="http://ya.ru"]%%';
+  var testurl = '@@iframe src=http://ya.ru@@';
   var testmsgs = [{
     text: '<p>' + testurl + '</p>'
   }];
@@ -13,6 +13,7 @@ describe('Iframe', function() {
 
   before(function (done) {
     shriekWebRTC(testmsgs, function (err, data) {
+      console.log(data);
       result = data[0].text;
     });
     done();
