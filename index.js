@@ -2,7 +2,7 @@ function getIframe(text) {
   var iframeRegex = /@@iframe src=(https?:\/\/[^\s<\[]+)@@/g;
 
   var iframe = text.replace(iframeRegex, function (match, url, offset, string) {
-    return '<iframe src="' + url + '"></iframe>';
+    return '<iframe src="' + url + '" frameborder="0" allowfullscreen></iframe>';
   });
 
   return iframe;
